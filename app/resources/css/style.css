@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+  ul.trades li:last-of-type {
+        margin: 0;
+    }
+
+  ul.trades li .buttons {
+    width: 100px;
+    height: 50px;
+  
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  ul.trades li .buttons button {
+    width: 50px;
+    height: 50px;
+    float: left;
+    background: none;
+    position: relative;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+  
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  
+  ul.trades li .buttons button svg {
+    width: 22px;
+    height: 22px;
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    margin: -11px 0 0 -11px;
+  }
+  
+  ul.trades li .buttons button.close svg {
+    border-radius: 11px;
+    border: 1.5px solid #25b99a;
+  
+    transition: background 0.2s ease;
+  }
+  
+  ul.trades#close li .buttons button.close svg {
+    background: #25b99a;
+    border: 0px;
+  }
+  
+  ul.trades:not(#closeList) li .buttons button.close:hover svg {
+    background: rgba(37, 185, 154, 0.75);
+  }
+  
+  ul.trades:not(#closeList) li .buttons button.close:hover svg .fill {
+    fill: #fff;
+  }
+  
+  ul.trades#closeList li .buttons button.close svg .fill {
+    fill: #fff;
+  }
+  
+  ul.trades li .buttons button svg .fill {
+    transition: fill 0.2s ease;
+  }
+  
+  ul.trades li .buttons button.delete svg .fill {
+    fill: #c0cecb;
+  }
+  
+  ul.trades li .buttons button.delete:hover svg .fill {
+    fill: #e85656;
+  }
+  
+  ul.trades li .buttons button.close svg .fill {
+    fill: #25b99a;
+  }
+  
+  ul.trades#closeList {
+    position: relative;
+    padding: 60px 0 0 0;
+  }
+
+  ul.trades#openList {
+    position: relative;
+    padding: 10px 0 0 0;
+  }
+  
+  ul.trades#closeList:before {
+    content: '';
+    width: 150px;
+    height: 1px;
+    background: #d8e5e0;
+  
+    position: absolute;
+    top: 30px;
+    left: 50%;
+  
+    margin: 0 0 0 -75px;
+  }
+  
+  ul.trades#openList:empty:after {
+    content: 'You have no opened trade positions';
+    margin: 15px 0 0 0;
+  }
+  
+  
+  ul.trades#openList:after,
+  ul.trades#closeList:after {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  ul.trades#closeList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  ul.trades#closeList li.list-group-item {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #eeeeee;
+    display: flex;
+
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+  }

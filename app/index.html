@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Trader's Journal</title>
+
+    <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+
+  </head>
+  <body>
+  
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">  
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control" type="text" id="searchInput" onkeyup="searchFilter()" placeholder="Enter search here">
+        </form>
+        <input type="button" id="toggleForm" class="btn btn-info" value="Add New Trade"></input>
+      </nav>
+      <br>
+    
+      <!-- Open Position Form-->
+    <div class="container">
+        <form id="openForm" style="display: none;">
+          <fieldset>
+            <br>
+            <div class="form-group">
+              <label for="ticker">Ticker</label>
+              <input type="text" class="form-control" id="ticker" placeholder="Enter ticker" required="true">
+            </div>
+            <div class="form-group">
+              <label for="position">Position</label>
+              <select class="form-control" id="position" required="true">
+                <option value="" selected disabled hidden>Please Select</option>
+                <option>Long</option>
+                <option>Short</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="openp">Open Price</label>
+                <input type="number" class="form-control" id="openp" placeholder="Enter Price" required="true" min="0" step="any">
+            </div>
+            <div class="form-group">
+                <label for="opend">Open Price</label>
+                <input type="date" class="form-control" id="opend" placeholder="Choose Date" required="true">
+            </div>
+            <input type="button" id="submitOpen" class="btn btn-primary" value="Submit"></input>
+            <input type="button" id="submitCancel" class="btn btn-danger" value="Cancel"></input>
+          </fieldset>
+        </form>
+      </div>  
+    <br>
+
+    <div class="container">
+      <h4> Your Trade Positions</h4>
+    <!-- Opened Positions Table -->
+      <ul class="trades" id="openList"></ul> 
+
+    <br>
+
+    <!-- Close Position Form -->
+    <div class="container">
+        <form id="closeForm" style="display: none;">
+          <fieldset>
+            <div class="form-group">
+                <label for="closep">Close Price</label>
+                <input type="number" class="form-control" id="closep" placeholder="Enter Price" required="true" min="0" step="any">
+            </div>
+            <div class="form-group">
+                <label for="closeD">Close Date</label>
+                <input type="date" class="form-control" id="closeD" placeholder="Choose Date" required="true">
+            </div>
+            <input type="button" id="submitClose" class="btn btn-primary" value="Submit"></input>
+            <input type="button" id="closeCancel" class="btn btn-danger" value="Cancel"></input>
+          </fieldset>
+        </form>
+      </div>
+    <!-- Closed Positions Table-->
+      <ul class="trades" id="closeList">
+      </ul>
+    </div>
+
+  </body>
+
+  <script src="resources/js/main.js"></script>
+
+</html>
